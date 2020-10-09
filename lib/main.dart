@@ -1,4 +1,3 @@
-import 'package:TimeTracker/navigation/navigation_methods.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
