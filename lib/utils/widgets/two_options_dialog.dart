@@ -47,7 +47,8 @@ class _TwoOptionsDialogState extends State<TwoOptionsDialog> {
             children: <Widget>[
               RoundedButton(
                 text: widget.leftOptionText,
-                size: Size(150, 40),
+                height: 40,
+                width: 150,
                 color: AppColors.PrimaryLightBlue,
                 style: AppTextStyle.whiteStyle(
                     fontSize: AppFontSizes.text16, fontWeight: FontWeight.w500),
@@ -55,7 +56,8 @@ class _TwoOptionsDialogState extends State<TwoOptionsDialog> {
               ),
               RoundedButton(
                 text: widget.rightOptionText,
-                size: Size(150, 40),
+                height: 40,
+                width: 150,
                 color: AppColors.PrimaryLightBlue,
                 style: AppTextStyle.whiteStyle(
                     fontSize: AppFontSizes.text16, fontWeight: FontWeight.w500),

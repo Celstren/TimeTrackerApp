@@ -1,3 +1,4 @@
+import 'package:TimeTracker/utils/general/app_border_radius.dart';
 import 'package:TimeTracker/utils/general/app_colors.dart';
 import 'package:TimeTracker/utils/general/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -7,23 +8,25 @@ class RoundedButton extends StatelessWidget {
   final Function onPress;
   final Color color;
   final TextStyle style;
-  final Size size;
+  final double height;
+  final double width;
   const RoundedButton({
     Key key,
     this.text,
     this.onPress,
-    this.color = AppColors.PrimaryLightBlue,
+    this.color = AppColors.PrimaryGrey,
     this.style,
-    this.size,
+    this.height = 50,
+    this.width = 350,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size?.height ?? 50,
-      width: size?.width ?? 200,
+      height: height,
+      width: width,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(29),
+        borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
         child: onPress != null ? FlatButton(
           padding: EdgeInsets.zero,
           color: color,
@@ -31,7 +34,7 @@ class RoundedButton extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: style ?? AppTextStyle.blackStyle(fontSize: 12),
+              style: style ?? AppTextStyle.whiteStyle(fontSize: 12),
               textAlign: TextAlign.center,
             ),
           ),
@@ -40,7 +43,7 @@ class RoundedButton extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: style ?? AppTextStyle.blackStyle(fontSize: 12),
+              style: style ?? AppTextStyle.whiteStyle(fontSize: 12),
               textAlign: TextAlign.center,
             ),
           ),

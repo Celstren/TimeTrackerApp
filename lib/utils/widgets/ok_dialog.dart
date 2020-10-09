@@ -43,7 +43,8 @@ class _OkDialogState extends State<OkDialog> {
               SizedBox(height: 20),
               RoundedButton(
                 text: widget.okText,
-                size: Size(160, 40),
+                height: 40,
+                width: 160,
                 color: AppColors.PrimaryLightBlue,
                 style: AppTextStyle.whiteStyle(
                     fontSize: AppFontSizes.text16, fontWeight: FontWeight.w500),
