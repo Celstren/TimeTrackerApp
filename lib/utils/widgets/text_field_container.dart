@@ -60,8 +60,8 @@ class TextFieldContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      width: size?.width ?? 300,
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      width: size?.width ?? 350,
       height: size?.height ?? 50,
       decoration: BoxDecoration(
           color: backgroundColor, borderRadius: borderRadius, border: border),
@@ -73,7 +73,7 @@ class TextFieldContainer extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(right: 20),
                       child: Text(
                         leftLabel,
                         style: leftLabelStyle ??
