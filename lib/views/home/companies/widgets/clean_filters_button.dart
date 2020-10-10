@@ -7,11 +7,11 @@ class CleanFiltersButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 80,
+      width: 180,
+      height: 50,
       decoration: BoxDecoration(
         color: AppColors.PrimaryWhite,
-        borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
+        borderRadius: AppBorderRadius.all(radius: AppRadius.radius25),
       ),
       child: FlatButton(
         padding: EdgeInsets.zero,

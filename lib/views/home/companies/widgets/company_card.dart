@@ -19,6 +19,7 @@ class CompanyCard extends StatelessWidget {
                   height: 80,
                   width: 320,
                   decoration: BoxDecoration(
+                    color: AppColors.PrimaryWhite,
                     borderRadius:
                         AppBorderRadius.all(radius: AppRadius.radius15),
                   ),
@@ -40,7 +41,7 @@ class CompanyCard extends StatelessWidget {
                     color: AppColors.PrimaryLightBlue,
                     border: Border.all(
                       color: AppColors.PrimaryWhite,
-                      width: 10,
+                      width: 4,
                     ),
                   ),
                   child: Center(

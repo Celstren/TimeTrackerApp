@@ -7,11 +7,11 @@ class ApplyFiltersButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 80,
+      width: 180,
+      height: 50,
       decoration: BoxDecoration(
         color: AppColors.PrimaryWhite,
-        borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
+        borderRadius: AppBorderRadius.all(radius: AppRadius.radius25),
       ),
       child: FlatButton(
         padding: EdgeInsets.zero,
@@ -21,7 +21,7 @@ class ApplyFiltersButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Icon(Icons.filter_b_and_w),
+            Icon(Icons.filter_b_and_w, size: 30, color: AppColors.PrimaryLightBlue),
             Text("Aplicar Filtros", style: AppTextStyle.lightBlueStyle(),)
           ],
         ),

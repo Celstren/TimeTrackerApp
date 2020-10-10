@@ -1,5 +1,4 @@
 import 'package:TimeTracker/utils/exports/app_design.dart';
-import 'package:TimeTracker/utils/widgets/app_scaffold.dart';
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +12,7 @@ class StadisticsView extends StatefulWidget {
 class _StadisticsViewState extends State<StadisticsView> {
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
+    return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             AppSeparator.VerticalSeparator60,
@@ -42,9 +38,6 @@ class _StadisticsViewState extends State<StadisticsView> {
               style: AppTextStyle.whiteStyle(),
             ),
           ],
-        ),
-      ),
-      showBottomNavBar: true,
-    );
+        );
   }
 }

@@ -1,5 +1,4 @@
-import 'package:TimeTracker/utils/exports/app_design.dart';
-import 'package:TimeTracker/utils/widgets/app_scaffold.dart';
+import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/views/home/companies/widgets/apply_filters_button.dart';
 import 'package:TimeTracker/views/home/companies/widgets/clean_filters_button.dart';
 import 'package:TimeTracker/views/home/companies/widgets/company_card.dart';
@@ -13,11 +12,14 @@ class CompaniesView extends StatefulWidget {
 }
 
 class _CompaniesViewState extends State<CompaniesView> {
+
+  List<String> cards = ["", "", ""];
+
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-      body: Column(
+    return Column(
         children: <Widget>[
+          AppSeparator.VerticalSeparator30,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -25,31 +27,11 @@ class _CompaniesViewState extends State<CompaniesView> {
               CleanFiltersButton(),
             ],
           ),
-          ListView.builder(
-            itemCount: 3,
-            itemBuilder: (BuildContext context, int index) => CompanyCard(),
+          AppSeparator.VerticalSeparator30,
+          Column(
+            children: cards.map<CompanyCard>((e) => CompanyCard()).toList(),
           ),
         ],
-      ),
-      showBottomNavBar: true,
-      floatingButton: FloatingActionButton(
-        onPressed: () {
-          print("Add");
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.PrimaryGreen,
-          ),
-          child: Center(
-            child: Icon(
-              Icons.add,
-              size: 40,
-              color: AppColors.PrimaryWhite,
-            ),
-          ),
-        ),
-      ),
-    );
+      );
   }
 }
