@@ -34,7 +34,7 @@ class RoundedIconButton extends StatelessWidget {
             ),
           ),
         ) : Material(
-          color: AppColors.PrimaryDarkGrey,
+          color: AppColors.PrimaryLightGrey,
           child: Center(
             child: Icon(
               iconData, size: size * .75,

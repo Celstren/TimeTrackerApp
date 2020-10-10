@@ -6,6 +6,7 @@ import 'package:TimeTracker/utils/widgets/app_scaffold.dart';
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/utils/widgets/rounded_button.dart';
 import 'package:TimeTracker/utils/widgets/text_field_container.dart';
+import 'package:TimeTracker/views/authentication/login/logic/login_form.dart';
 import 'package:TimeTracker/views/authentication/register/register_view.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
 
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  LoginForm _loginForm = LoginForm();
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +35,14 @@ class _LoginViewState extends State<LoginView> {
             ),
             AppSeparator.VerticalSeparator60,
             TextFieldContainer(
-              controller: usernameController,
+              controller: _loginForm.usernameController,
               label: "Email",
               labelStyle: AppTextStyle.greyStyle(),
               borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
             ),
             AppSeparator.VerticalSeparator20,
             TextFieldContainer(
-              controller: passwordController,
+              controller: _loginForm.passwordController,
               label: "Password",
               labelStyle: AppTextStyle.greyStyle(),
               borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
@@ -50,6 +50,7 @@ class _LoginViewState extends State<LoginView> {
             AppSeparator.VerticalSeparator50,
             RoundedButton(
               text: "Ingresar",
+              onPress: () => _loginForm.loginUser(context),
             ),
             AppSeparator.VerticalSeparator50,
             Text("¿Olvidaste tu contraseña?", style: AppTextStyle.whiteStyle(fontSize: AppFontSizes.text14)),

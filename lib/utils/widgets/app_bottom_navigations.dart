@@ -80,3 +80,83 @@ class _BossBottomNavigationState extends State<BossBottomNavigation> {
     );
   }
 }
+
+class EmployeeBottomNavigation extends StatefulWidget {
+  final Function(int) onItemSelected;
+  EmployeeBottomNavigation({Key key, this.onItemSelected}) : super(key: key);
+
+  @override
+  _EmployeeBottomNavigationState createState() => _EmployeeBottomNavigationState();
+}
+
+class _EmployeeBottomNavigationState extends State<EmployeeBottomNavigation> {
+  int currentNavBarIndex = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: BottomNavigationBar(
+        currentIndex: currentNavBarIndex,
+        showUnselectedLabels: true,
+        onTap: (int value) {
+          setState(() {
+            currentNavBarIndex = value;
+          });
+          if (widget.onItemSelected != null) {
+            widget.onItemSelected(value);
+          }
+        },
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 30,
+                color: AppColors.PrimaryGrey,
+              ),
+              activeIcon: Icon(
+                Icons.person,
+                size: 50,
+                color: AppColors.PrimaryLightBlue,
+              ),
+              title: Text("Perfil", style: AppTextStyle.greyStyle())),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.timer,
+                size: 30,
+                color: AppColors.PrimaryGrey,
+              ),
+              activeIcon: Icon(
+                Icons.timer,
+                size: 50,
+                color: AppColors.PrimaryLightBlue,
+              ),
+              title: Text("Marcar", style: AppTextStyle.greyStyle())),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.history,
+                size: 30,
+                color: AppColors.PrimaryGrey,
+              ),
+              activeIcon: Icon(
+                Icons.history,
+                size: 50,
+                color: AppColors.PrimaryLightBlue,
+              ),
+              title: Text("Historial", style: AppTextStyle.greyStyle())),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.calendar_today,
+                size: 30,
+                color: AppColors.PrimaryGrey,
+              ),
+              activeIcon: Icon(
+                Icons.calendar_today,
+                size: 50,
+                color: AppColors.PrimaryLightBlue,
+              ),
+              title: Text("Horario", style: AppTextStyle.greyStyle())),
+        ],
+      ),
+    );
+  }
+}
