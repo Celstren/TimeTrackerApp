@@ -1,4 +1,5 @@
 import 'package:TimeTracker/utils/exports/app_design.dart';
+import 'package:TimeTracker/utils/widgets/app_bottom_navigations.dart';
 import 'package:flutter/material.dart';
 
 class AppScaffold extends StatefulWidget {
@@ -6,7 +7,16 @@ class AppScaffold extends StatefulWidget {
   final Widget body;
   final bool scrollable;
   final Function onBack;
-  AppScaffold({Key key, this.body, this.scrollable = true, this.onBack})
+  final bool showBottomNavBar;
+  final Widget floatingButton;
+  AppScaffold(
+      {Key key,
+      this.body,
+      this.scrollable = true,
+      this.onBack,
+      this.showBottomNavBar = false,
+      this.floatingButton,
+      })
       : assert(body != null, "Body can't be null"),
         super(key: key);
 
@@ -15,6 +25,7 @@ class AppScaffold extends StatefulWidget {
 }
 
 class _AppScaffoldState extends State<AppScaffold> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,6 +62,10 @@ class _AppScaffoldState extends State<AppScaffold> {
                 : SizedBox()
           ],
         ),
+        floatingActionButton: widget.floatingButton,
+        bottomNavigationBar: widget.showBottomNavBar
+            ? BossBottomNavigation()
+            : null,
       ),
     );
   }
