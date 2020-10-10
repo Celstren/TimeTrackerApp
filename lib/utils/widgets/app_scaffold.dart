@@ -6,7 +6,16 @@ class AppScaffold extends StatefulWidget {
   final Widget body;
   final bool scrollable;
   final Function onBack;
-  AppScaffold({Key key, this.body, this.scrollable = true, this.onBack})
+  final Widget floatingButton;
+  final Widget bottomNav;
+  AppScaffold(
+      {Key key,
+      this.body,
+      this.scrollable = true,
+      this.onBack,
+      this.floatingButton,
+      this.bottomNav,
+      })
       : assert(body != null, "Body can't be null"),
         super(key: key);
 
@@ -15,6 +24,7 @@ class AppScaffold extends StatefulWidget {
 }
 
 class _AppScaffoldState extends State<AppScaffold> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,6 +61,8 @@ class _AppScaffoldState extends State<AppScaffold> {
                 : SizedBox()
           ],
         ),
+        floatingActionButton: widget.floatingButton,
+        bottomNavigationBar: widget.bottomNav,
       ),
     );
   }

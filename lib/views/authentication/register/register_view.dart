@@ -1,3 +1,4 @@
+import 'package:TimeTracker/navigation/navigation_methods.dart';
 import 'package:TimeTracker/utils/exports/app_design.dart';
 import 'package:TimeTracker/utils/general/constant_helper.dart';
 import 'package:TimeTracker/utils/widgets/app_scaffold.dart';
@@ -5,6 +6,8 @@ import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/utils/widgets/rounded_button.dart';
 import 'package:TimeTracker/utils/widgets/text_field_container.dart';
 import 'package:TimeTracker/views/authentication/register/logic/register_form.dart';
+import 'package:TimeTracker/views/home/home_view.dart';
+import 'package:TimeTracker/views/home/stadistics/stadistics_view.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatefulWidget {
@@ -70,6 +73,7 @@ class _RegisterViewState extends State<RegisterView> {
           AppSeparator.VerticalSeparator20,
           RoundedButton(
             text: "Registrar",
+            onPress: () => NavigationMethods.of(context).navigateAndRemoveUntil(HomeView()),
           ),
         ],
       ),
