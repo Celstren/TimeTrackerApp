@@ -1,4 +1,6 @@
 import 'package:TimeTracker/utils/exports/app_design.dart';
+import 'package:TimeTracker/utils/widgets/app_bar_chart.dart';
+import 'package:TimeTracker/utils/widgets/app_pie_chart.dart';
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +17,11 @@ class _StadisticsViewState extends State<StadisticsView> {
     return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            AppSeparator.VerticalSeparator60,
+            AppSeparator.VerticalSeparator40,
             SizedBox(
-              height: 180,
-              width: 180,
-              child: Placeholder(),
+              height: 300,
+              width: 300,
+              child: BarChartSample1(),
             ),
             AppSeparator.VerticalSeparator20,
             Text(
@@ -28,15 +30,16 @@ class _StadisticsViewState extends State<StadisticsView> {
             ),
             AppSeparator.VerticalSeparator20,
             SizedBox(
-              height: 180,
-              width: 180,
-              child: Placeholder(),
+              height: 300,
+              width: 300,
+              child: PieChartSample1(),
             ),
             AppSeparator.VerticalSeparator20,
             Text(
-              "Relación de empleados sema",
+              "Relación de empleados semana",
               style: AppTextStyle.whiteStyle(),
             ),
+            AppSeparator.VerticalSeparator40,
           ],
         );
   }
