@@ -38,6 +38,7 @@ dependencies:
   audioplayers: ^0.16.1
   connectivity: ^0.4.9+2
   rxdart: ^0.24.1
+  google_maps: ^3.4.5
 
 dev_dependencies:
   flutter_test:
