@@ -1,3 +1,4 @@
+import 'package:TimeTracker/navigation/navigation_methods.dart';
 import 'package:TimeTracker/utils/general/app_border_radius.dart';
 import 'package:TimeTracker/utils/general/app_font_sizes.dart';
 import 'package:TimeTracker/utils/general/app_text_styles.dart';
@@ -5,6 +6,8 @@ import 'package:TimeTracker/utils/widgets/app_scaffold.dart';
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/utils/widgets/rounded_button.dart';
 import 'package:TimeTracker/utils/widgets/text_field_container.dart';
+import 'package:TimeTracker/views/authentication/login/logic/login_form.dart';
+import 'package:TimeTracker/views/authentication/register/register_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -16,8 +19,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
 
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  LoginForm _loginForm = LoginForm();
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +35,14 @@ class _LoginViewState extends State<LoginView> {
             ),
             AppSeparator.VerticalSeparator60,
             TextFieldContainer(
-              controller: usernameController,
+              controller: _loginForm.usernameController,
               label: "Email",
               labelStyle: AppTextStyle.greyStyle(),
               borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
             ),
             AppSeparator.VerticalSeparator20,
             TextFieldContainer(
-              controller: passwordController,
+              controller: _loginForm.passwordController,
               label: "Password",
               labelStyle: AppTextStyle.greyStyle(),
               borderRadius: AppBorderRadius.all(radius: AppRadius.radius15),
@@ -48,6 +50,7 @@ class _LoginViewState extends State<LoginView> {
             AppSeparator.VerticalSeparator50,
             RoundedButton(
               text: "Ingresar",
+              onPress: () => _loginForm.loginUser(context),
             ),
             AppSeparator.VerticalSeparator50,
             Text("¿Olvidaste tu contraseña?", style: AppTextStyle.whiteStyle(fontSize: AppFontSizes.text14)),
@@ -56,7 +59,10 @@ class _LoginViewState extends State<LoginView> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text("¿No tienes cuenta?", style: AppTextStyle.whiteStyle()),
-                Text("Regístrate", style: AppTextStyle.blueLinkStyle(decoration: TextDecoration.underline)),
+                GestureDetector(
+                  onTap: () => NavigationMethods.of(context).navigateTo(RegisterView()),
+                  child: Text("Regístrate", style: AppTextStyle.blueLinkStyle(decoration: TextDecoration.underline)),
+                ),
               ],
             ),
          ],

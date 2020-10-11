@@ -3,6 +3,27 @@ import 'package:TimeTracker/utils/general/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
+  static TextStyle lightBlueStyle({
+    String fontFamily = AppFonts.Montserrat_Regular,
+    double fontSize = 16,
+    List<Shadow> shadows,
+    FontWeight fontWeight,
+    FontStyle fontStyle,
+    double letterSpacing,
+    double wordSpacing,
+    TextDecoration decoration,
+  }) =>
+      TextStyle(
+        color: AppColors.PrimaryLightBlue,
+        fontFamily: fontFamily,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+        shadows: shadows,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+        decoration: decoration,
+      );
   static TextStyle blueLinkStyle({
     String fontFamily = AppFonts.Montserrat_Regular,
     double fontSize = 16,
@@ -91,7 +112,7 @@ class AppTextStyle {
         decoration: decoration,
       );
 
-  static TextStyle darkGreyStyle({
+  static TextStyle lightGreyStyle({
     String fontFamily = AppFonts.Montserrat_Regular,
     double fontSize = 16,
     List<Shadow> shadows,
@@ -102,7 +123,7 @@ class AppTextStyle {
     TextDecoration decoration,
   }) =>
       TextStyle(
-        color: AppColors.PrimaryDarkGrey,
+        color: AppColors.PrimaryLightGrey,
         fontFamily: fontFamily,
         fontSize: fontSize,
         fontWeight: fontWeight,
