@@ -1,4 +1,5 @@
 import 'package:TimeTracker/views/home/employee/mark/widgets/mark_card.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
 
 class MarkWithMapView extends StatefulWidget {
@@ -9,6 +10,14 @@ class MarkWithMapView extends StatefulWidget {
 }
 
 class _MarkWithMapViewState extends State<MarkWithMapView> {
+  GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(45.521563, -122.677433);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +29,13 @@ class _MarkWithMapViewState extends State<MarkWithMapView> {
             child: SizedBox(
               width: 350,
               height: 500,
-              child: Placeholder(),
+              child: GoogleMap(
+                onMapCreated: _onMapCreated,
+                initialCameraPosition: CameraPosition(
+                  target: _center,
+                  zoom: 11.0,
+                ),
+              ),
             ),
           ),
           Center(
