@@ -97,7 +97,7 @@ class AppDateTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 375,
+      width: 350,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -143,6 +143,65 @@ class AppDateTextField extends StatelessWidget {
               : Text(errorMsg,
                   style: AppTextStyle.redStyle(fontSize: AppFontSizes.text12)),
         ],
+      ),
+    );
+  }
+}
+
+class AppSimpleDateTextField extends StatelessWidget {
+  final DateTime controller;
+  final Function(DateTime) onSelected;
+  final String text;
+  final TextStyle style;
+  final Border border;
+  final Color background;
+  const AppSimpleDateTextField({
+    Key key,
+    this.controller,
+    this.onSelected,
+    this.text = "",
+    this.style,
+    this.border,
+    this.background,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 350,
+      child: GestureDetector(
+        onTap: () async {
+          DateTime dateSelected = await showDatePicker(
+              context: context,
+              initialDate: controller ?? DateTime.now(),
+              firstDate: DateTime(DateTime.now().year - 100),
+              lastDate: DateTime.now());
+          if (dateSelected != null && onSelected != null) {
+            onSelected(dateSelected);
+          }
+        },
+        child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: background ?? AppColors.PrimaryWhite,
+            border: border ?? AppBorder.blackBorder,
+            borderRadius: AppBorderRadius.all(radius: AppRadius.radius10),
+          ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                controller != null
+                    ? DateFormat("dd/MM/yyyy").format(controller)
+                    : text,
+                style:
+                    style ?? AppTextStyle.blackStyle(fontSize: AppFontSizes.subitle16),
+                textAlign: TextAlign.left,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

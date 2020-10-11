@@ -3,14 +3,14 @@ import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/utils/widgets/overview_field.dart';
 import 'package:flutter/material.dart';
 
-class ProfileView extends StatefulWidget {
-  ProfileView({Key key}) : super(key: key);
+class BossProfileView extends StatefulWidget {
+  BossProfileView({Key key}) : super(key: key);
 
   @override
-  _ProfileViewState createState() => _ProfileViewState();
+  _BossProfileViewState createState() => _BossProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class _BossProfileViewState extends State<BossProfileView> {
   @override
   Widget build(BuildContext context) {
     return Stack(

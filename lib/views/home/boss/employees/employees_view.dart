@@ -1,17 +1,17 @@
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
-import 'package:TimeTracker/views/home/companies/widgets/apply_filters_button.dart';
-import 'package:TimeTracker/views/home/companies/widgets/clean_filters_button.dart';
-import 'package:TimeTracker/views/home/companies/widgets/company_card.dart';
+import 'package:TimeTracker/views/home/boss/companies/widgets/apply_filters_button.dart';
+import 'package:TimeTracker/views/home/boss/companies/widgets/clean_filters_button.dart';
+import 'package:TimeTracker/views/home/boss/employees/widgets/employee_card.dart';
 import 'package:flutter/material.dart';
 
-class CompaniesView extends StatefulWidget {
-  CompaniesView({Key key}) : super(key: key);
+class EmployeesView extends StatefulWidget {
+  EmployeesView({Key key}) : super(key: key);
 
   @override
-  _CompaniesViewState createState() => _CompaniesViewState();
+  _EmployeesViewState createState() => _EmployeesViewState();
 }
 
-class _CompaniesViewState extends State<CompaniesView> {
+class _EmployeesViewState extends State<EmployeesView> {
 
   List<String> cards = ["", "", ""];
 
@@ -29,7 +29,7 @@ class _CompaniesViewState extends State<CompaniesView> {
           ),
           AppSeparator.VerticalSeparator30,
           Column(
-            children: cards.map<CompanyCard>((e) => CompanyCard()).toList(),
+            children: cards.map<EmpleadoCard>((e) => EmpleadoCard()).toList(),
           ),
         ],
       );

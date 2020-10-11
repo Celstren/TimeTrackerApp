@@ -112,7 +112,7 @@ class AppTextStyle {
         decoration: decoration,
       );
 
-  static TextStyle darkGreyStyle({
+  static TextStyle lightGreyStyle({
     String fontFamily = AppFonts.Montserrat_Regular,
     double fontSize = 16,
     List<Shadow> shadows,
@@ -123,7 +123,7 @@ class AppTextStyle {
     TextDecoration decoration,
   }) =>
       TextStyle(
-        color: AppColors.PrimaryDarkGrey,
+        color: AppColors.PrimaryLightGrey,
         fontFamily: fontFamily,
         fontSize: fontSize,
         fontWeight: fontWeight,
