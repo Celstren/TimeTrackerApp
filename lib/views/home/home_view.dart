@@ -8,8 +8,10 @@ import 'package:TimeTracker/views/home/boss/employees/widgets/add_employee_butto
 import 'package:TimeTracker/views/home/boss/boss_profile/boss_profile_view.dart';
 import 'package:TimeTracker/utils/widgets/logout_button.dart';
 import 'package:TimeTracker/views/home/boss/stadistics/stadistics_view.dart';
+import 'package:TimeTracker/views/home/employee/history/history_view.dart';
 import 'package:TimeTracker/views/home/employee/mark/main_mark_view.dart';
 import 'package:TimeTracker/views/home/employee/profile/employee_profile_view.dart';
+import 'package:TimeTracker/views/home/employee/schedule/schedule_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -60,10 +62,10 @@ class _HomeViewState extends State<HomeView> {
           view = MainMarkView();
           break;
         case 2:
-          view = CompaniesView();
+          view = HistoryView();
           break;
         case 3:
-          view = EmployeesView();
+          view = ScheduleView();
           break;
         default:
           view = StadisticsView();
