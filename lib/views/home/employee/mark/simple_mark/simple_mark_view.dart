@@ -1,4 +1,3 @@
-import 'package:TimeTracker/utils/exports/app_design.dart';
 import 'package:TimeTracker/utils/widgets/app_separators.dart';
 import 'package:TimeTracker/utils/widgets/circular_avatar.dart';
 import 'package:TimeTracker/views/home/employee/mark/widgets/mark_card.dart';
