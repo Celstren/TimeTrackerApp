@@ -11,7 +11,7 @@ class MainMarkView extends StatefulWidget {
 
 class _MainMarkViewState extends State<MainMarkView> {
 
-  bool needsGeolocation = true;
+  bool needsGeolocation = false;
 
   @override
   Widget build(BuildContext context) {
