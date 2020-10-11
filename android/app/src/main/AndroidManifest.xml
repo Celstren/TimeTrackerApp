@@ -9,6 +9,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="TimeTracker"
         android:icon="@mipmap/ic_launcher">
+        <!-- TODO: Add your API key here -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="@string/google_key"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
